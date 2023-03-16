@@ -1,0 +1,38 @@
+ALGORITHM simple_sorting2
+
+VAR
+   
+    arr: ARRAY_OF INTEGER[n];
+    i,j,pos,n,card:INTEGER;
+   
+BEGIN
+  Write ("donner la valeur de la carte à inserer");
+         Read(card);
+
+  
+      i:=0;
+      n:=arr.length;
+      // PUSH THE CARD IN THE ARRAY
+      arr[n]:=card;
+
+   // we determine the position of the card to be insert   
+IF (card<arr[n-1]) THEN
+ 
+
+      WHILE (arr[i]<=card) DO
+      i:=i+1;
+      END_WHILE
+      pos:=i;
+   FOR j FROM (n) TO pos STEP -1  DO
+       
+        arr[j]:=arr[j-1];
+        
+   END_FOR
+     arr[pos]:=card;
+
+      ELSE // the card is the last element and it's the greater it conserve it position
+      arr[n]:=card;
+END_IF
+    
+
+END
